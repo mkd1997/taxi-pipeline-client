@@ -48,7 +48,7 @@ CONTAINER_PORT=8501
 
 echo Model directory: $LOCAL_MODEL_DIR
 
-docker run -p 127.0.0.1:$HOST_PORT:$CONTAINER_PORT \
+docker run -d -p 127.0.0.1:$HOST_PORT:$CONTAINER_PORT \
   -v $LOCAL_MODEL_DIR:$CONTAINER_MODEL_DIR \
   -e MODEL_NAME=chicago_taxi \
   --rm $DOCKER_IMAGE_NAME
